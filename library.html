@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central Library</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f6f9;
+}
+
+/* Header */
+header{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    margin:0;
+}
+
+/* Search Section */
+.search-section{
+    text-align:center;
+    margin:20px;
+}
+
+input{
+    padding:10px;
+    width:250px;
+    border-radius:5px;
+    border:1px solid gray;
+}
+
+/* Category Buttons */
+.categories{
+    text-align:center;
+    margin:20px;
+}
+
+.categories button{
+    margin:5px;
+    padding:8px 12px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.categories button:hover{
+    background:#1e40af;
+}
+
+/* Topic Cards */
+.topic-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    width:250px;
+    margin:10px;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin:0;
+}
+
+.card p{
+    font-size:14px;
+    color:gray;
+}
+
+.read-btn{
+    margin-top:10px;
+    padding:6px 10px;
+    background:#16a34a;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* Detail Section */
+.detail-section{
+    display:none;
+    padding:20px;
+    background:white;
+    margin:20px;
+    border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h2>Welcome to</h2>
+    <h1>Central Library</h1>
+</header>
+
+<div class="search-section">
+    <input type="text" id="searchInput" placeholder="Search 🔍">
+</div>
+
+<div class="categories">
+    <button onclick="filterCategory('All')">All</button>
+    <button onclick="filterCategory('Science')">Science & Technology</button>
+    <button onclick="filterCategory('Politics')">National Politics</button>
+    <button onclick="filterCategory('Myth')">Myth Buster</button>
+</div>
+
+<div class="topic-container" id="topicContainer"></div>
+
+<div class="detail-section" id="detailSection"></div>
+
+<script>
+const topics = [
+    {
+        title:"Topic 1",
+        date:"1999",
+        author:"xyz kumar",
+        category:"Science",
+        content:"In 1999, the United Nations faced a pivotal moment as it prepared for the new millennium..."
+    },
+    {
+        title:"Topic 2",
+        date:"2026",
+        author:"abc sharma",
+        category:"Politics",
+        content:"National political developments shaped the future governance structure..."
+    },
+    {
+        title:"Topic 3",
+        date:"2025",
+        author:"rahul singh",
+        category:"Myth",
+        content:"Exploring myths and uncovering scientific truths behind common beliefs..."
+    }
+];
+
+const container = document.getElementById("topicContainer");
+const detailSection = document.getElementById("detailSection");
+
+function displayTopics(data){
+    container.innerHTML="";
+    data.forEach(topic=>{
+        container.innerHTML += `
+            <div class="card">
+                <h3>${topic.title}</h3>
+                <p>By ${topic.author}</p>
+                <p>Date: ${topic.date}</p>
+                <button class="read-btn" onclick="showDetail('${topic.title}')">Read More</button>
+            </div>
+        `;
+    });
+}
+
+function showDetail(title){
+    const topic = topics.find(t=>t.title===title);
+    detailSection.style.display="block";
+    detailSection.innerHTML = `
+        <h2>${topic.title}</h2>
+        <p><strong>Author:</strong> ${topic.author}</p>
+        <p><strong>Date:</strong> ${topic.date}</p>
+        <p>${topic.content}</p>
+        <h4>References</h4>
+        <ul>
+            <li>Ref 1</li>
+            <li>Ref 2</li>
+        </ul>
+    `;
+}
+
+function filterCategory(category){
+    if(category==="All"){
+        displayTopics(topics);
+    } else{
+        const filtered = topics.filter(t=>t.category===category);
+        displayTopics(filtered);
+    }
+}
+
+document.getElementById("searchInput").addEventListener("keyup", function(){
+    const value = this.value.toLowerCase();
+    const filtered = topics.filter(t=>t.title.toLowerCase().includes(value));
+    displayTopics(filtered);
+});
+
+displayTopics(topics);
+</script>
+
+</body>
+</html>

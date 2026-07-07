@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(45deg, #212121, #73606e);
+        }
+
+        #search_page{
+            /* height:90vh;
+            border-radius: 3vh;
+            margin-top: 6vh;
+            background:url("WhatsApp Image 2026-02-11 at 9.42.42 PM.jpeg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center; */
+            
+   
+    height:90vh;
+    width:80vw;
+    margin-top:6vh;
+    border-radius:20px;
+    background:url("WhatsApp Image 2026-02-11 at 9.42.42 PM.jpeg");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative;
+    padding-top:20px;
+}
+            
+        #backBtn{
+    position:absolute;
+    top:30px;
+    left:70px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:black;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+        /* #search_container{
+    margin-top:60px;
+    width:40vw;
+} */
+
+#search_box{
+    display:flex;
+    width:60vw;
+}
+
+#search_box input{
+    flex:1;
+    padding:18px;
+    font-size:18px;
+    border:none;
+    outline:none;
+    border-radius:25px 0 0 25px;
+}
+
+#search_box button{
+    padding:18px 25px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:0 25px 25px 0;
+    cursor:pointer;
+}
+
+#suggestions{
+    width:60vw;
+    margin-top:5px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+#suggestions p{
+    margin:0;
+    padding:12px;
+    cursor:pointer;
+    border-bottom:1px solid #ddd;
+}
+
+#suggestions p:hover{
+    background:#f1f1f1;
+}
+
+/* =================== Mobile Responsive =================== */
+
+@media (max-width:768px){
+
+    body{
+        display:block;
+        padding:10px;
+    }
+
+    #search_page{
+        width:100%;
+        height:100vh;
+        margin-top:0;
+        border-radius:0;
+        padding-top:70px;
+       
+    }
+
+    #backBtn{
+        width:35px;
+        height:35px;
+        top:20px;
+        left:20px;
+    }
+
+    #search_box{
+        width:90%;
+    }
+
+    #search_box input{
+        font-size:16px;
+        padding:14px;
+    }
+
+    #search_box button{
+        font-size:16px;
+        padding:14px 18px;
+    }
+
+    #suggestions{
+        width:90%;
+    }
+
+    #suggestions p{
+        font-size:15px;
+        padding:12px;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <div id="search_page" >
+        <div  >
+            <a href="om.html"><img src="vector-back-icon.webp" alt="" id="backBtn" ></a>
+        </div>
+         <div id="search_box">
+            <input type="text" id="search" placeholder="Search here...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div id="suggestions"></div>
+     
+       </div>
+       
+   <script src="SearchBar.js"></script>
+
+<script>
+const input = document.getElementById("search");
+const btn = document.getElementById("searchBtn");
+
+btn.addEventListener("click", function () {
+    const query = input.value.trim();
+
+    if (query !== "") {
+        window.location.href =
+            "https://5000/search?q=" + encodeURIComponent(query);
+    }
+});
+// function goToPage() {
+//     window.location.href = "om.html";
+// }
+</script>
+</body>
+</html>
+
+
+

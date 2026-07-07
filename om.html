@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <style>
+          head,body{
+            margin:0;
+            padding:0;
+          }
+          body{
+            height: 280vh;
+            width:100vw;
+            background: url("WhatsApp Image 2026-02-11 at 9.42.42 PM.jpeg") ;
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          #head1{
+            margin-left:25%;
+            height:10vh;
+            color:rgb(75, 78, 242);
+            font-size: 11vh;
+          }
+          #head2{
+            color:rgb(20, 214, 33);
+            padding-left:40%;
+            padding-top: 0%;
+            font-size:10vh;
+          }
+          #main-page{
+            display: flex;
+            margin-top: 10vh;
+          }
+          #search-bar{
+            font-size: 10vh;
+            color:rgb(28, 107, 33);
+            font-weight:bolder;
+            display: flex;
+            background: rgba(0,0,0,0.5);
+            cursor:pointer;
+          }
+          #search-icon{
+            height:8vh;
+            width:8vh;
+            margin-top: 1vh;
+          }
+          #suggestion-bar{
+            font-size: 10vh;
+            color:rgb(73, 107, 240);
+            font-weight:bolder;
+            background: rgba(0,0,0,0.5);
+            margin-top: 20vh;
+            cursor:pointer;
+          }
+          #category-bar{
+            /* margin-left: 80vh; */
+            margin-left:auto;
+            width:60vh;
+            color:white;
+            background: rgba(0,0,0,0.5);
+          }
+          #category{
+            font-size: 10vh;
+          }
+          #category-element{
+            font-size: 4vh;
+            cursor:pointer;
+          }
+         
+          .arrow{
+            margin-top:8vh;
+            margin-left:5vh;
+            /* width:170vh; */
+            width:90%;
+    margin:40px auto;
+            height:2vh;
+            background: rgb(93, 164, 240);
+            border: 0.5vh solid orange;
+            clip-path:polygon(8% 0% , 92% 0% , 100% 50% , 92% 100% , 8% 100% , 0% 50%);
+          }
+          #trending{
+             background: rgba(23, 124, 174, 0.5);
+             font-size: 9vh;
+             color: white;
+             text-align: center;
+             padding:0vh;
+             width: 60vh;
+             margin-left:60vh;
+          }
+          #line{
+            display: flex;
+            justify-content: space-around;
+            
+            font-size: 4vh;
+            margin-top: 4vh;
+            
+          }
+          #topic{
+            background: rgba(217, 16, 16, 0.5);
+            padding: 1vh 8vh  1vh 1vh;
+          }
+          a{
+            text-decoration: none;
+            color: white;
+          }
+          .second-line{
+            padding-top:6vh;
+          }
+        .topic-2{
+          width:100vh;
+          height:100vh;
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px){
+
+    body{
+        width:100%;
+        height:auto;
+        background-size:cover;
+    }
+
+    #head1{
+        margin-left:0;
+        text-align:center;
+        font-size:7vw;
+    }
+
+    #head2{
+        padding-left:0;
+        text-align:center;
+        font-size:8vw;
+    }
+
+    #main-page{
+        flex-direction:column;
+        align-items:center;
+        margin-top:5vh;
+    }
+
+    #left-side{
+        width:90%;
+    }
+
+    #search-bar,
+    #suggestion-bar{
+        width:100%;
+        justify-content:center;
+        align-items:center;
+        font-size:8vw;
+        padding:12px;
+        border-radius:10px;
+    }
+
+    #search-icon{
+        width:35px;
+        height:35px;
+        margin-left:10px;
+    }
+
+    #suggestion-bar{
+        margin-top:20px;
+    }
+
+    #category-bar{
+        width:90%;
+        margin:25px 0;
+    }
+
+    #category{
+        text-align:center;
+        font-size:8vw;
+    }
+
+    #category-element{
+        font-size:5vw;
+    }
+
+    .arrow{
+        width:90%;
+        height:10px;
+        margin:20px auto;
+    }
+
+    #trending{
+        width:90%;
+        margin:20px auto;
+        font-size:7vw;
+    }
+
+    #line{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+    }
+
+    #topic{
+        width:90%;
+        text-align:center;
+        padding:20px;
+    }
+
+    #first-row{
+        font-size:6vw;
+    }
+
+    #second-row{
+        font-size:4vw;
+    }
+}
+    </style>
+
+</script>
+</head>
+<body>
+   <div id="header">
+    <div id="head1">Welcome to</div>
+    <div id="head2">Central Library</div>
+   </div>
+   <div id="main-page">
+        <div id="left-side">
+            <div  >
+               <a id="search-bar" href="search_page.html"> 
+                <div id="search-text" >Search </div>
+                <img id="search-icon" src="search.png" alt=""></a>
+            </div>
+            <div id="suggestion-bar">Suggestion</div>
+        </div>
+        <div id="category-bar">
+            <div id="category">Category</div>
+            <div id="category-element">
+                <ul>
+                    <li>Pop culture</li>
+                    <li>Science and technology</li>
+                    <li>Miliary and geopolitics</li>
+                    <li>National politics</li>
+                    <li>Myth Bruster</li>
+                </ul>
+            </div>
+        </div>
+   </div>
+   <div class="arrow"></div>
+   <div id="trending">Trending Topic</div>
+   <div class="first-line" id="line">
+    <div id="topic" class="topic-1" >
+      <a href="topic1.html" >
+        <div id="first-row">Topic 1</div>
+      <div id="second-row">Date 2026</div>
+      </a>
+    </div>
+    <div  id="topic">
+      <a href="PDFGallery_20260215_233005.pdf" class="topic-2">
+        <div id="first-row">Topic 2</div>
+        <div id="second-row">Date 2026</div>
+      </a>
+    </div>
+    <div class="topic-3" id="topic">
+      <a href="topic3.html">
+        <div id="first-row">Topic 3</div>
+        <div id="second-row">Date 2026</div>
+      </a>
+    </div>
+    <div class="topic-4" id="topic">
+      <a href="topic4.html">
+        <div id="first-row">Topic 4</div>
+        <div id="second-row">Date 2026</div>
+      </a>
+    </div>
+   </div>
+   <div id="line" class="second-line">
+    <div class="topic-5" id="topic">
+      <a href="topic5.html">
+        <div id="first-row">Topic 5</div>
+        <div id="second-row">Date 2025</div>
+      </a>
+    </div>
+     <div class="topic-6" id="topic">
+      <a href="topic6.html">
+        <div id="first-row">Topic 6</div>
+        <div id="second-row">Date 2025</div>
+      </a>
+    </div>
+     <div class="topic-7" id="topic">
+      <a href="topic7.html">
+        <div id="first-row">Topic 7</div>
+        <div id="second-row">Date 2025</div>
+      </a>
+    </div>
+    <div class="topic-8" id="topic">
+      <a href="topic8.html">
+        <div id="first-row">Topic 8</div>
+        <div id="second-row">Date 2025</div>
+      </a>
+    </div>
+   </div>
+   
+
+<script>
+// function goToPage() {
+//     window.location.href = "search_page.html";
+// }
+
+  </script>
+</body>
+</html>
+
