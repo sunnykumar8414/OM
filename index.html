@@ -16,7 +16,79 @@
             background-size:cover;
             background-repeat: no-repeat;
             background-position: center;
+            
           }
+          #mainHeader{
+            position:fixed;
+            width:100vw;
+            height:9.5vh;
+            background:rgb(3, 3, 3 , 0.9);
+            border-bottom: 2px solid white
+          }
+          #header{
+            padding-top:9vh;
+          }
+                  #logOut{
+  top:2vh;
+  right:3vw;
+  text-align:center;
+  position:fixed;
+  background:rgb(3, 3, 3);
+  color:white;
+  padding:15px 20px;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:3vh;
+  /* border:2px solid red; */
+}
+ #profileLogo{
+  top:2vh;
+  right:11vw;
+  height:6.5vh;
+  width:4vw;
+  background:url("profileIcon.webp");
+  position:fixed;
+background-size:cover;
+            background-repeat: no-repeat;
+            background-position: center;
+  cursor:pointer;
+  border-radius:5px;
+  /* border:2px solid red; */
+}
+ #libLogo{
+  top:2vh;
+  left:8vw;
+  /* padding:15px; */
+  height:6.5vh;
+  width:4vw;
+  background:url("libraryLogo.webp");
+  position:fixed;
+background-size:cover;
+            background-repeat: no-repeat;
+            background-position: center;
+  cursor:pointer;
+  border-radius:5px;
+  /* border:2px solid red; */
+}
+#logOut:hover{
+    background:rgb(215, 205, 205, 0.5 );
+  }
+  #search-bar{
+    height:6vh;
+    width:55vw;
+    position:fixed;
+    top:2vh;
+    left:20vw;
+border:2px solid rgb(37, 17, 140) ;
+border-radius:5px;
+color:white;
+font-size:3.5vh;
+display:flex;
+align-items:center;
+padding-left:1.5vw;
+
+  }
+  
           #head1{
             margin-left:25%;
             height:10vh;
@@ -33,13 +105,19 @@
             display: flex;
             margin-top: 10vh;
           }
-          #search-bar{
+          #text-bar{
             font-size: 10vh;
             color:rgb(28, 107, 33);
             font-weight:bolder;
             display: flex;
             background: rgba(0,0,0,0.5);
             cursor:pointer;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+          }
+          #text-bar:hover , #suggestion-bar:hover , #cat:hover{
+            background:rgb(60, 60, 60 , 0.5);
           }
           #search-icon{
             height:8vh;
@@ -101,6 +179,10 @@
             background: rgba(217, 16, 16, 0.5);
             padding: 1vh 8vh  1vh 1vh;
           }
+
+          #topic:hover{
+            background:rgb(218, 112, 112 , 0.5);
+          }
           a{
             text-decoration: none;
             color: white;
@@ -112,7 +194,9 @@
           width:100vh;
           height:100vh;
         }
+  
 
+  
         /* ================= MOBILE RESPONSIVE ================= */
 
 @media (max-width: 768px){
@@ -154,6 +238,9 @@
         padding:12px;
         border-radius:10px;
     }
+    #search-bar:hover , #suggestion-bar:hover{
+            background:rgb(60, 60, 60 , 0.5);
+          }
 
     #search-icon{
         width:35px;
@@ -213,31 +300,36 @@
 }
     </style>
 
-</script>
+
 </head>
 <body>
+  <div id="mainHeader">
+    <div id="logOut">log out</div>
+    <div id="search-bar">Search here</div>
+<div id="profileLogo"></div>
+<div id="libLogo"></div>
+  </div>
    <div id="header">
+  
     <div id="head1">Welcome to</div>
     <div id="head2">Central Library</div>
+    
    </div>
    <div id="main-page">
         <div id="left-side">
-            <div  >
-               <a id="search-bar" href="search_page.html"> 
-                <div id="search-text" >Search </div>
-                <img id="search-icon" src="search.png" alt=""></a>
-            </div>
-            <div id="suggestion-bar">Suggestion</div>
+          
+            <div  id="text-bar">Today</div>
+            <div id="suggestion-bar" >Suggestion</div>
         </div>
         <div id="category-bar">
             <div id="category">Category</div>
-            <div id="category-element">
+            <div id="category-element" >
                 <ul>
-                    <li>Pop culture</li>
-                    <li>Science and technology</li>
-                    <li>Miliary and geopolitics</li>
-                    <li>National politics</li>
-                    <li>Myth Bruster</li>
+                    <a  href=""><li id="cat">Pop culture</li></a>
+                    <a  href=""><li id="cat">Science and technology</li></a>
+                    <a  href=""><li id="cat">Miliary and geopolitics</li></a>
+                     <a href=""><li id="cat">National politics</li></a>
+                    <a  href=""><li id="cat">Myth Bruster</li></a>
                 </ul>
             </div>
         </div>
@@ -295,6 +387,7 @@
         <div id="second-row">Date 2025</div>
       </a>
     </div>
+    
    </div>
    
 
