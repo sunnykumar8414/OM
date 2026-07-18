@@ -23,7 +23,8 @@
             width:100vw;
             height:9.5vh;
             background:rgb(3, 3, 3 , 0.9);
-            border-bottom: 2px solid white
+            border-bottom: 2px solid white;
+            z-index:1000;
           }
           #header{
             padding-top:9vh;
@@ -79,8 +80,6 @@ background-size:cover;
     top: 2vh;
     left: 20vw;
     width: 50vw;
-    z-index: 1000;
-
     height: 6vh;
     border: 2px solid rgb(37, 17, 140);
     border-radius: 5px 0 0 5px;
@@ -89,7 +88,15 @@ background-size:cover;
     font-size: 3.5vh;
     padding-left: 1.5vw;
     box-sizing: border-box;
+    z-index:1000;
+    text-decoration:none;
+      outline:none;
+
 }
+/* #search input{
+  outline:none;
+} */
+
 
 #suggestions{
    position: fixed;

@@ -17,7 +17,7 @@ search.addEventListener("input", function () {
     const value = search.value.toLowerCase();
 
     suggestions.innerHTML = "";
-
+// 
     if (value === "") {
         return;
     }
